@@ -1,0 +1,76 @@
+set term postscript enhanced eps color dashed 12 font "Helvetica,15"
+plotname="wavefunctionsnapshots"
+set output plotname.".eps"
+
+set xrange [-3:3]
+set yrange [-3:3]
+set xtics -3,3,3.1
+set ytics -3,3,3.1
+
+set contour base
+set cntrparam cubicspline
+unset surface
+set view map
+unset clabel
+set size square
+set cntrparam levels 6
+
+
+set multiplot layout 2,3 title "Probability Density Dynamics, Uncoupled Bath" offset 0,0 margins 0.1,0.9,0.21,0.88 spacing 0.06,0.08
+set key at screen 0.9,screen 0.10
+
+set title "0 fs"
+unset xlabel
+unset xtics
+set ylabel "x_2 [au]"
+splot "./TensorTrainData/wave.0.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.0.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.1" w l lw 4 lc "red" t "FT-Chebyshev"
+
+unset key
+
+set title "0.024 fs"
+unset xlabel
+unset ylabel
+unset xtics
+unset ytics
+splot "./TensorTrainData/wave.1.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.1.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.2" w l lw 4 lc "red" t "FT-Chebyshev"
+
+
+set title "0.048 fs"
+unset xlabel
+unset ylabel
+unset xtics
+unset ytics
+splot "./TensorTrainData/wave.2.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.2.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.3" w l lw 4 lc "red" t "FT-Chebyshev"
+
+
+set title "0.073 fs"
+set xlabel "x_1 [au]"
+set ylabel "x_2 [au]"
+set xtics
+set ytics
+splot "./TensorTrainData/wave.3.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.3.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.4" w l lw 4 lc "red" t "FT-Chebyshev"
+
+
+set title "0.097 fs"
+set xlabel "x_1 [au]"
+unset ylabel
+set xtics
+unset ytics
+splot "./TensorTrainData/wave.4.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.4.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.5" w l lw 4 lc "red" t "FT-Chebyshev"
+
+#set title "0.12 fs"
+#set xlabel "x_1 [au]"
+#unset ylabel
+#set xtics
+#unset ytics
+#splot "./TensorTrainData/wave.5.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.5.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.6" w l lw 4 lc "red" t "FT-Chebyshev"
+
+set title "0.15 fs"
+set xlabel "x_1 [au]"
+unset ylabel
+set xtics
+unset ytics
+splot "./TensorTrainData/wave.6.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.6.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.7" w l lw 4 lc "red" t "FT-Chebyshev"
+
+load "< ps2pdf -dEPSCrop ".plotname.".eps > /dev/null 2>&1"
+load "< okular ".plotname.".pdf > /dev/null 2>&1 &"

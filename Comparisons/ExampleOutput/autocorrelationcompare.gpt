@@ -1,0 +1,26 @@
+set term postscript enhanced eps color dashed 12 font "Helvetica,18"
+plotname="autocorrelationcompare"
+set output plotname.".eps"
+
+set xlabel "Time [fs]"
+set xtics 0,0.06,0.17
+set yrange [-1:1]
+set ytics -1.,1,1.1
+set ylabel "Autocorrelation Function"
+unset colorbox
+#set xrange [0:50]
+au2fs=0.02418884254
+
+set multiplot layout 1,2 title "Autocorrelation Function"
+
+set title "Real Part"
+#plot "xi" u 1:2 w l lc "gray70" lw 4 t "","./2DLongTime/xi" w p ps 2 pt 7 lc "gray20" t ""
+plot "./TensorTrainData/autocorrelation.dat" u ($1*au2fs):2 w l lc "black" lw 12 t "","./TensorTrainData/autocorrelation.dat" u ($1*au2fs):4 w l lc "blue" lw 4 t "","./FunctionTrainData/xi" u ($1*au2fs):2 w l lw 3 lc "red" t ""
+
+set title "Imaginary Part"
+#plot "xi" u 1:3 w l lc "gray70" lw 4 t "","./2DLongTime/xi" u 1:3 w p ps 2 pt 7 lc "gray20" t ""
+plot "./TensorTrainData/autocorrelation.dat" u ($1*au2fs):3 w l lc "black" lw 12 t "SOFT","./TensorTrainData/autocorrelation.dat" u ($1*au2fs):5 w l lc "blue" lw 4 t "TT-Chebyshev","./FunctionTrainData/xi" u ($1*au2fs):3 w l lw 3 lc "red" t "FT-Chebyshev"
+
+
+load "< ps2pdf -dEPSCrop ".plotname.".eps > /dev/null 2>&1"
+load "< okular ".plotname.".pdf > /dev/null 2>&1 &"

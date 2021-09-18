@@ -1,33 +1,29 @@
-# TTandFTChebyshev
-Simulation of chemical dynamics in high dimensionality with low-rank tensor-train Chebyshev (TT-Chebyshev) and function-train Chebyshev (FT-Chebyshev) quantum dynamics 
+# FTTC
+Simulation of chemical dynamics in high dimensionality with low-rank functional tensor-train Chebyshev (FTTC) quantum dynamics 
 
 # Dependencies
 
-The TT-Chebyshev program requires the following:
-
-- MATLAB
-- H-Tucker Tensor Toolbox
-- TT-Toolbox
-
-The FT-Chebyshev program requires the following:
+The functional tensor-train Chebyshev (FTTC) program requires the following:
 
 - C compiler
 - CMake
 - Compressed Continuous Computation (C3) library (which requires BLAS, LAPACK, and optionally SWIG-python)
 
-Comparison of TT- and FT-Chebyshev results with the provided scripts requires:
+The tensor-train (TT) Chebyshev program requires the following:
+
+- MATLAB
+- H-Tucker Tensor Toolbox
+- TT-Toolbox
+
+Comparison of FTTC and TT results with the provided scripts requires:
 
 - Gnuplot
 
 # Instructions
 
-## TT-Chebyhsev
+## FTTC
 
-To run the TT-Chebyshev code in folder ``TensorTrain``, run ``tt_CHEBSOFT.m`` in MATLAB. Data files can then be converted to Gnuplot format by running ``GnuplotConversion.m`` in MATLAB.
-
-## FT-Chebyhsev
-
-To run the FT-Chebyshev code in folder ``FunctionTrain``, compile with commands:
+To run the FTTC code in folder ``FunctionTrain``, compile with commands:
 ```
 cmake .
 make
@@ -38,9 +34,13 @@ and run the program as follows:
 ```
 Troubleshooting details are included in the ``readme.txt`` file in the FT-Chebyshev folder. 
 
+## TT-Chebyhsev
+
+To run the TT-Chebyshev code in folder ``TensorTrain``, run ``tt_CHEBSOFT.m`` in MATLAB. Data files can then be converted to Gnuplot format by running ``GnuplotConversion.m`` in MATLAB.
+
 ## Comparison Code
 
-TT- and FT-Chebyshev results can be compared by moving the TT- and FT-Chebyshev data files to folder ``TensorTrainData`` and ``FunctionTrainData`` in folder ``Comparisons`` and using the following commands:
+FTTC and TT-Chebyshev results can be compared by moving the data files to folder ``TensorTrainData`` and ``FunctionTrainData`` in folder ``Comparisons`` and using the following commands:
 
 ```
 gnuplot wavefunctionsnapshots.gpt

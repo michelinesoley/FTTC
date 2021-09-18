@@ -35,8 +35,8 @@ include_directories(${BLAS_INCLUDE_DIR}, ${LAPACK_INCLUDE_DIR})
 
 set(CMAKE_C_FLAGS "${compiler_flags}")
 
-add_executable(ft_cheb 2dpro.c auxiliary.c)
-target_link_libraries(ft_cheb
+add_executable(fttc 2dpro.c auxiliary.c)
+target_link_libraries(fttc
     -g 
     ${blas_lapack} 
     -lm

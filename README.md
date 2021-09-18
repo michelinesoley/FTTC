@@ -23,24 +23,24 @@ Comparison of FTTC and TT results with the provided scripts requires:
 
 ## FTTC
 
-To run the FTTC code in folder ``FunctionTrain``, compile with commands:
+To run the FTTC code in folder ``FTTC``, compile with commands:
 ```
 cmake .
 make
 ```
 and run the program as follows:
 ```
-./ft_cheb
+./fttc
 ```
-Troubleshooting details are included in the ``readme.txt`` file in the FT-Chebyshev folder. 
+Troubleshooting details are included in the ``readme.txt`` file in the FTTC folder. 
 
-## TT-Chebyhsev
+## TT Chebyhsev
 
-To run the TT-Chebyshev code in folder ``TensorTrain``, run ``tt_CHEBSOFT.m`` in MATLAB. Data files can then be converted to Gnuplot format by running ``GnuplotConversion.m`` in MATLAB.
+To run the TT Chebyshev code in folder ``TT``, run ``tt_CHEBSOFT.m`` in MATLAB. Data files can then be converted to Gnuplot format by running ``GnuplotConversion.m`` in MATLAB.
 
 ## Comparison Code
 
-FTTC and TT-Chebyshev results can be compared by moving the data files to folder ``TensorTrainData`` and ``FunctionTrainData`` in folder ``Comparisons`` and using the following commands:
+FTTC and TT results can be compared by moving the data files to folder ``TTData`` and ``FTTCData`` in folder ``Comparisons`` and using the following commands:
 
 ```
 gnuplot wavefunctionsnapshots.gpt

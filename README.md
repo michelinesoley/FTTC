@@ -1,5 +1,8 @@
 # FTTC
-Simulation of chemical dynamics in high dimensionality with low-rank functional tensor-train Chebyshev (FTTC) quantum dynamics 
+Simulation of chemical dynamics in high dimensionality with low-rank functional tensor-train Chebyshev (FTTC) quantum dynamics
+
+Micheline B. Soley, Paul Bergold, Alex A. Gorodetsky, Victor S. Batista, J. Chem. Theory Comput. 2021, in press.
+https://doi.org/10.1021/acs.jctc.1c00941
 
 # Dependencies
 
@@ -8,6 +11,8 @@ The functional tensor-train Chebyshev (FTTC) program requires the following:
 - C compiler
 - CMake
 - Compressed Continuous Computation (C3) library (which requires BLAS, LAPACK, and optionally SWIG-python)
+
+Note the C version of the program reproduces the results in the paper. A Python version will be available shortly.
 
 The tensor-train (TT) Chebyshev program requires the following:
 

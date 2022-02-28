@@ -23,7 +23,7 @@ set title "0 fs"
 unset xlabel
 unset xtics
 set ylabel "x_2 [au]"
-splot "./TensorTrainData/wave.0.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.0.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.1" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.0.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","../TTData/wave.0.dat" u 1:2:4 w l lc "blue" lw 5 t "TT","../FTTCData/wave.1" w l lw 4 lc "red" t "FTTC"
 
 unset key
 
@@ -32,7 +32,7 @@ unset xlabel
 unset ylabel
 unset xtics
 unset ytics
-splot "./TensorTrainData/wave.1.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.1.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.2" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.1.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.1.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.2" w l lw 4 lc "red"
 
 
 set title "0.048 fs"
@@ -40,7 +40,7 @@ unset xlabel
 unset ylabel
 unset xtics
 unset ytics
-splot "./TensorTrainData/wave.2.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.2.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.3" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.2.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.2.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.3" w l lw 4 lc "red"
 
 
 set title "0.073 fs"
@@ -48,7 +48,7 @@ set xlabel "x_1 [au]"
 set ylabel "x_2 [au]"
 set xtics
 set ytics
-splot "./TensorTrainData/wave.3.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.3.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.4" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.3.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.3.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.4" w l lw 4 lc "red"
 
 
 set title "0.097 fs"
@@ -56,21 +56,21 @@ set xlabel "x_1 [au]"
 unset ylabel
 set xtics
 unset ytics
-splot "./TensorTrainData/wave.4.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.4.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.5" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.4.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.4.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.5" w l lw 4 lc "red"
 
 #set title "0.12 fs"
 #set xlabel "x_1 [au]"
 #unset ylabel
 #set xtics
 #unset ytics
-#splot "./TensorTrainData/wave.5.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.5.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.6" w l lw 4 lc "red" t "FT-Chebyshev"
+#splot "../TTData/wave.5.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.5.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.6" w l lw 4 lc "red"
 
 set title "0.15 fs"
 set xlabel "x_1 [au]"
 unset ylabel
 set xtics
 unset ytics
-splot "./TensorTrainData/wave.6.dat" u 1:2:3 w l lc "black" lw 8 t "SOFT","./TensorTrainData/wave.6.dat" u 1:2:4 w l lc "blue" lw 5 t "TT-Chebyshev","./FunctionTrainData/wave.7" w l lw 4 lc "red" t "FT-Chebyshev"
+splot "../TTData/wave.6.dat" u 1:2:3 w l lc "black" lw 8,"../TTData/wave.6.dat" u 1:2:4 w l lc "blue" lw 5,"../FTTCData/wave.7" w l lw 4 lc "red"
 
 load "< ps2pdf -dEPSCrop ".plotname.".eps > /dev/null 2>&1"
 load "< okular ".plotname.".pdf > /dev/null 2>&1 &"

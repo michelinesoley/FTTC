@@ -1,0 +1,25 @@
+set term postscript enhanced eps color dashed 12 font "Helvetica,18"
+plotname="norm"
+set output plotname.".eps"
+
+set xlabel "Time [au]"
+set ylabel "Norm"
+set xrange [0:6]
+set yrange [0.9:1.1]
+unset colorbox
+
+# palette
+set palette defined ( 0 '#B2182B',\
+                  1 '#D6604D',\
+          2 '#F4A582',\
+          3 '#FDDBC7',\
+          4 '#D1E5F0',\
+          5 '#92C5DE',\
+          6 '#4393C3',\
+          7 '#2166AC' )
+
+set title "Norm"
+plot "norm.npy" w l lc "black" lw 4 t ""
+
+load "< ps2pdf -dEPSCrop ".plotname.".eps > /dev/null 2>&1"
+load "< okular ".plotname.".pdf > /dev/null 2>&1 &"
